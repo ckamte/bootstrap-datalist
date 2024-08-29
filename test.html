@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme=dark>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datalist Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <form>
+        <div class="container mt-4">
+            <h5>Original style</h5>
+            <div class="mb-3">
+                <label for="exampleDataList0" class="form-label">Datalist example 1</label>
+                <div class="datalist-wrapper">
+                    <input class="form-control" autocomplete="off" role="combobox" name="normal_list" list="normal_list"
+                        id="exampleDataList0" placeholder="Select your favorite browser...">
+                    <datalist id="normal_list" role="listbox">
+                        <option value="cme">Chrome</option>
+                        <option value="ffx">Firefox</option>
+                        <option value="mie">Internet Explorer</option>
+                        <option value="mse">Microsoft Edge</option>
+                        <option value="opr">Opera</option>
+                        <option value="sfr">Safari</option>
+                    </datalist>
+                </div>
+            </div>
+            <hr>
+            <h5>Datalist with option value and text (like select)</h5>
+            <div class="mb-3">
+                <label for="exampleDataList" class="form-label">Datalist example 1</label>
+                <div class="datalist-wrapper">
+                    <input class="form-control datalist-input" autocomplete="off" role="combobox" name="browser_list"
+                        list="browser_list" id="exampleDataList" placeholder="Select your favorite browser...">
+                    <datalist id="browser_list" role="listbox">
+                        <option value="cme">Chrome</option>
+                        <option value="ffx">Firefox</option>
+                        <option value="mie">Internet Explorer</option>
+                        <option value="mse">Microsoft Edge</option>
+                        <option value="opr">Opera</option>
+                        <option value="sfr">Safari</option>
+                    </datalist>
+                </div>
+            </div>
+            <hr>
+            <h5>Datalist with option value only</h5>
+            <div class="row mb-3">
+                <label for="exampleDataList1" class="col-form-label col-auto">Datalist example 2</label>
+                <div class="col-5 datalist-wrapper">
+                    <input class="form-control datalist-input" autocomplete="off" role="combobox" name="city_names"
+                        list="city_names" id="exampleDataList1" placeholder="Select your favorite city...">
+                    <datalist id="city_names" role="listbox">
+                        <option value="San Francisco"></option>
+                        <option value="New York"></option>
+                        <option value="Seattle"></option>
+                        <option value="Los Angeles"></option>
+                        <option value="Chicago"></option>
+                    </datalist>
+                </div>
+            </div>
+            <hr>
+            <h5>Datalist with option text only</h5>
+            <div class="row mb-3">
+                <label for="exampleDataList2" class="col-form-label col-auto">Datalist example 3</label>
+                <div class="col-7 datalist-wrapper">
+                    <input class="form-control datalist-input" autocomplete="off" role="combobox" name="country_name"
+                        list="country_name" id="exampleDataList2" placeholder="Select your favorite country..."
+                        required>
+                    <datalist id="country_name" role="listbox">
+                        <option>China</option>
+                        <option>England</option>
+                        <option>Germany</option>
+                        <option>India</option>
+                        <option>USA</option>
+                    </datalist>
+                </div>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="test0">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="test2">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="test3">
+            </div>
+            <div class="d-flex justify-content-end">
+                <input class="btn btn-outline-danger" type="reset" value="Reset">
+                <input class="btn btn-outline-primary ms-2" type="submit" value="Test">
+            </div>
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        (function (root, factory) {
+            if (typeof define === "function" && define.amd) {
+                define(["jquery"], function ($) {
+                    return factory($);
+                });
+            } else if (typeof exports === "object") {
+                module.exports = factory(require("jquery"));
+            } else {
+                factory(jQuery);
+            }
+        })(this, function ($) {
+            const www = function () {
+                "use strict";
+                return build();
+                function build() {
+                    return {
+                        css: buildCss(),
+                    }
+                }
+                function buildCss() {
+                    return {
+                        top: {
+                            borderBottomLeftRadius: '0',
+                            borderBottomRightRadius: '0',
+                            borderBottomColor: 'var(--bs-border-color)',
+                            clipPath: 'inset(-0.25rem -0.25rem 0 -0.25rem)'
+                        },
+                        bottom: {
+                            borderTopLeftRadius: '0',
+                            borderTopRightRadius: '0',
+                            borderTop: 'none',
+                            borderColor: '#86b7fe',
+                            outline: '0',
+                            boxShadow: '0 0 0 0.25rem rgba(13, 110, 253, 0.25)',
+                            clipPath: 'inset(0px -0.25rem -0.25rem -0.25rem)',
+                            transition: 'border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out'
+                        }
+                    };
+                }
+            }();
+            (function () {
+                "use strict";
+                let arr;
+                let m = {
+                    initialize: function (input) {
+                        arr = {};
+                        arr.wrapper = input.parent('.datalist-wrapper');
+                        let wrapperWidth = arr.wrapper.width();
+                        arr.shown = input;
+                        if (arr.wrapper.children('.datalist-value').length < 1) {
+                            let inputName = input.prop('name');
+                            arr.shown = input.removeAttr('name list')
+                            arr.wrapper.prepend('<input type="hidden" class="datalist-value" name="' + inputName + '">')
+                        }
+                        arr.hidden = arr.wrapper.children('.datalist-value');
+                        arr.datalist = arr.wrapper.children('datalist').addClass('dropdown-menu option-list').css('width', wrapperWidth);
+                        arr.options = arr.datalist.find('option').addClass('dropdown-item')
+                        if (arr.options.length > 0) {
+                            // reset options
+                            arr.options.removeClass('d-none active');
+                            // rebuild if needed
+                            arr.options.each(function () {
+                                if (!$(this).text()) {
+                                    $(this).text($(this).val());
+                                }
+                                if (!$(this).val()) {
+                                    $(this).val($(this).text());
+                                }
+                            })
+                            return true;
+                        }
+                        return false;
+                    },
+                    show: function (arr) {
+                        // apply styles
+                        arr.shown.css(www.css.top)
+                        arr.datalist.addClass('dropdown-menu option-list show').css(www.css.bottom)
+
+                        // if selected
+                        m.selected(arr)
+
+                        // controls
+                        m.mouse(arr);
+                        m.input(arr);
+                        m.keydown(arr);
+                    },
+                    hide: function (arr) {
+                        if (arr.hidden.val() === '') {
+                            arr.shown.val('');
+                        }
+                        arr.datalist.removeClass('show');
+                        arr.shown.removeAttr('style');
+                    },
+                    mouse: function (arr) {
+                        arr.options.each(function () {
+                            // on hover
+                            $(this).mouseenter(function (e) {
+                                e.stopImmediatePropagation();
+                                arr.shown.val($(this).text());
+                            })
+                            $(this).mouseleave(function (e) {
+                                e.stopImmediatePropagation();
+                                if (arr.hidden.val() !== '') {
+                                    m.selected(arr);
+                                } else {
+                                    arr.shown.val('');
+                                }
+                            })
+                            // on click
+                            $(this).mousedown(function (e) {
+                                e.stopImmediatePropagation();
+                                m.select(arr, $(this));
+                                arr.shown.trigger('blur');
+                            })
+                        })
+                    },
+                    input: function (arr) {
+                        // filtered input
+                        arr.shown.on('input', function (e) {
+                            e.stopImmediatePropagation();
+                            // clear selected value
+                            arr.hidden.val('');
+                            let inputKey = $(this).val();
+                            arr.options.each(function () {
+                                $(this).removeClass('active d-none');
+                                let optVal = ($(this).text().toLowerCase());
+                                if (optVal.indexOf(inputKey.toLowerCase()) === -1) {
+                                    $(this).addClass('d-none');
+                                }
+                                if (inputKey === $(this).text()) {
+                                    m.select(arr, $(this));
+                                }
+                            })
+                        })
+                    },
+                    keydown: function () {
+                        arr.shown.on('keydown', function (e) {
+                            e.stopImmediatePropagation();
+                            switch (e.keyCode) {
+                                case 40:
+                                    m.change(arr, 'next');
+                                    break;
+                                case 38:
+                                    m.change(arr, 'prev');
+                                    break;
+                                case 9:
+                                    e.preventDefault();
+                                    arr.shown.trigger('blur');
+                                    break;
+                                case 13:
+                                    e.preventDefault();
+                                    arr.shown.trigger('blur');
+                                    break;
+                            }
+                        })
+                    },
+                    change: function (arr, action) {
+                        let filtered = arr.datalist.find('option:not(".d-none")');
+                        let key = m.active(filtered);
+                        let listLength = filtered.length;
+                        if (listLength < 1) {
+                            return;
+                        }
+                        if (action === 'next') {
+                            key++
+                            if (key >= listLength) {
+                                key = 0;
+                            }
+                        } else {
+                            key--
+                            if (key < 0) {
+                                key = (listLength - 1);
+                            }
+                        }
+
+                        m.select(arr, $(filtered[key]));
+                    },
+                    active: function (list) {
+                        let key = -1;
+                        if ((list.length > 0) && (list.hasClass('active'))) {
+                            let old = -1;
+                            list.each(function () {
+                                old++
+                                if ($(this).hasClass('active')) {
+                                    key = old;
+                                }
+                            })
+                        }
+                        return key;
+                    },
+                    select: function (arr, elem) {
+                        arr.hidden.val(elem.val())
+                        arr.shown.val(elem.text())
+                        arr.options.removeClass('active');
+                        elem.addClass('active');
+                    },
+                    selected: function (arr) {
+                        let hiddenVal = arr.hidden.val();
+                        let shownVal = arr.shown.val();
+                        if ((hiddenVal !== '') && (shownVal !== '')) {
+                            arr.options.each(function () {
+                                if ($(this).val() === hiddenVal) {
+                                    m.select(arr, $(this));
+                                }
+                            })
+                        }
+
+                        if ((hiddenVal === '') && (shownVal !== '')) {
+                            arr.options.each(function () {
+                                if ($(this).text() === shownVal) {
+                                    m.select(arr, $(this));
+                                }
+                            })
+                        }
+                    },
+                }
+                $.fn.bootstrapDatalist = function () {
+                    $(this).on('focus', function () {
+                        if (m.initialize($(this)) === true) {
+                            m.show(arr);
+                        }
+                    })
+                    $(this).on('focusout blur', function () {
+                        m.hide(arr);
+                    })
+                }
+            })();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.datalist-input').bootstrapDatalist();
+        })
+    </script>
+</body>
+
+</html>
