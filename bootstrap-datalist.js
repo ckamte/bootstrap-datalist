@@ -1,5 +1,5 @@
 /*!
- * bootstrap-datalist 1.00.00
+ * bootstrap-datalist 1.00.01
  * https://github.com/ckamte/bootstrap-datalist
  * Licensed MIT
  */
@@ -81,6 +81,11 @@
                 // apply styles
                 arr.shown.css(www.css.top)
                 arr.datalist.addClass('dropdown-menu option-list show').css(www.css.bottom)
+
+                // reset value on form reset
+                arr.wrapper.parents('form').on('reset', function () {
+                    arr.hidden.val('');
+                })
 
                 // if selected
                 m.selected(arr)
