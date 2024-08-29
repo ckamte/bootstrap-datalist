@@ -1,3 +1,9 @@
+/*!
+ * bootstrap-datalist 1.00.00
+ * https://github.com/ckamte/bootstrap-datalist
+ * Licensed MIT
+ */
+
 (function (root, factory) {
     if (typeof define === "function" && define.amd) {
         define(["jquery"], function ($) {
